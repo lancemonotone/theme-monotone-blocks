@@ -1,6 +1,4 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 2,
 	"settings": {
 		"color": {
 			"palette": [
@@ -34,8 +32,6 @@
 		"typography": {
 			"fontFamilies": [
 				{
-					"fontFamily": "Sansita Swashed",
-					"slug": "sansita-swashed",
 					"fontFace": [
 						{
 							"fontFamily": "Sansita Swashed",
@@ -60,11 +56,10 @@
 							]
 						}
 					],
-					"isBcf": true
+					"fontFamily": "Sansita Swashed",
+					"slug": "sansita-swashed"
 				},
 				{
-					"fontFamily": "Mulish",
-					"slug": "mulish",
 					"fontFace": [
 						{
 							"fontFamily": "Mulish",
@@ -106,9 +101,12 @@
 							]
 						}
 					],
-					"isBcf": true
+					"fontFamily": "Mulish",
+					"slug": "mulish"
 				}
 			]
 		}
-	}
+	},
+	"version": 2,
+	"$schema": "https://schemas.wp.org/wp/6.5/theme.json"
 }

@@ -33,7 +33,7 @@
         },
         example: { attributes: {  } },
         edit: function ( props ) {
-            const blockProps = useBlockProps({ className: 'lg:flex lg:flex-col lg:justify-between lg:max-h-screen lg:py-24 lg:sticky lg:top-0 lg:w-1/2', 'data-pg-hidden': null });
+            const blockProps = useBlockProps({ className: 'lg:flex lg:flex-col lg:justify-between lg:max-h-screen lg:py-24 lg:sticky lg:top-0 lg:w-1/2' });
             const setAttributes = props.setAttributes; 
             
             

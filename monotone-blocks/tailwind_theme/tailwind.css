@@ -700,6 +700,14 @@ video {
 .bg-teal-400\/10 {
   background-color: rgb(45 212 191 / 0.1);
 }
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;

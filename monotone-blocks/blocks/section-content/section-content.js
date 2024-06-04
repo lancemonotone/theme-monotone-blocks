@@ -41,7 +41,7 @@
         },
         example: { attributes: { section_id: null, section_name: 'About me' } },
         edit: function ( props ) {
-            const blockProps = useBlockProps({ className: 'mb-16 scroll-mt-16 lg:scroll-mt-24', 'aria-label': propOrDefault( props.attributes.section_name, 'section_name' ), 'data-pg-hidden': null, id: propOrDefault( props.attributes.section_id, 'section_id' ) });
+            const blockProps = useBlockProps({ className: 'mb-16 scroll-mt-16 lg:scroll-mt-24', 'aria-label': propOrDefault( props.attributes.section_name, 'section_name' ), id: propOrDefault( props.attributes.section_id, 'section_id' ) });
             const setAttributes = props.setAttributes; 
             
             

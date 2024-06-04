@@ -22,5 +22,5 @@
 'show_archive_link' => ''
             ),
             'dynamic' => true,
-            'version' => '1.0.323'
+            'version' => '1.0.332'
         ) );

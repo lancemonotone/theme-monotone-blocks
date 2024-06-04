@@ -33,7 +33,7 @@
         },
         example: { attributes: {  } },
         edit: function ( props ) {
-            const blockProps = useBlockProps({ className: 'max-w-md pb-16 pt-16 text-sm sm:pb-0', 'data-pg-hidden': null });
+            const blockProps = useBlockProps({ className: 'max-w-md pb-16 pt-16 text-sm sm:pb-0' });
             const setAttributes = props.setAttributes; 
             
             

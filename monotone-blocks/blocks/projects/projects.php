@@ -16,10 +16,9 @@
                     <div class="grid group/card md:gap-4 pb-1 relative sm:gap-8 sm:grid-cols-12 transition-all"> 
                         <div class="-inset-x-4 -inset-x-6 -inset-y-4 absolute block card-bg motion-reduce:transition-none transition z-0 md:rounded-md lg:group-hover/card:drop-shadow-lg"> 
 </div>                         
-                        <div class="flex flex-col font-semibold mb-2 mt-1 sm:col-span-3 text-background-200 text-xs tracking-wide uppercase z-10" aria-label="2024 to Present"> 
-                            <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'medium' ) : null; ?>
-                            <img alt="Spotify Profile app homepage" loading="lazy" width="200" height="48" decoding="async" data-nimg="1" class="<?php if($image_attributes) echo 'with-image'; ?> border-2 border-slate-200/10 group-hover:border-slate-200/30 rounded sm:col-span-2 sm:order-1 sm:translate-y-1 transition" style="color:transparent;<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>" srcset="<?php echo get_template_directory_uri(); ?>/_next/image?url=%2Fimages%2Fprojects%2Fspotify-profile.png&amp;w=256&amp;q=75 1x, <?php echo get_template_directory_uri(); ?>/_next/image?url=%2Fimages%2Fprojects%2Fspotify-profile.png&amp;w=640&amp;q=75 2x" src="<?php echo get_template_directory_uri(); ?>/_next/image?url=%2Fimages%2Fprojects%2Fspotify-profile.png&amp;w=640&amp;q=75">                              
-                        </div>                         
+                        <?php $image_attributes = !empty( get_the_ID() ) ? wp_get_attachment_image_src( PG_Image::isPostImage() ? get_the_ID() : get_post_thumbnail_id( get_the_ID() ), 'medium' ) : null; ?>
+                        <div class="<?php if($image_attributes) echo 'with-image'; ?> flex flex-col font-semibold mb-2 mt-1 object-cover sm:col-span-3 text-background-200 text-xs tracking-wide uppercase z-10" aria-label="2024 to Present" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"> 
+</div>                         
                         <div class="sm:col-span-8 z-10">
                             <header>
                                 <h3 class="font-medium inline-block leading-snug"><a class="group/link inline-flex items-center" href="<?php echo esc_url( get_permalink() ); ?>" target="_blank" rel="noreferrer noopener" aria-foo="Start" aria-label="<?php echo get_the_title() . ' - ' ?> <?php echo '(opens in a new tab)' ?>"><span class="group-[.contrast]:border-b group-[.contrast]:border-dotted inline-block"><?php the_title(); ?></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"> 
@@ -42,7 +41,7 @@
                             </footer>                             
                         </div>                         
                         <?php if ( current_user_can( 'edit_posts' ) ) : ?>
-                            <span href="" class="font-bold hidden group-hover/card:block text-background-200 text-right text-xs uppercase z-10"><a href="<?php echo esc_url( get_edit_post_link() ); ?>" aria-label="Edit post" target="_blank" class="inline-block"><svg fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 528.899 528.899" xml:space="preserve" preserveAspectRatio width="25" height="25"> 
+                            <span href="" class="font-bold group-hover/card:block hidden object-contain text-background-200 text-right text-xs uppercase z-10"><a href="<?php echo esc_url( get_edit_post_link() ); ?>" aria-label="Edit post" target="_blank" class="inline-block"><svg fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 528.899 528.899" xml:space="preserve" preserveAspectRatio width="25" height="25"> 
                                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>                                         
                                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>                                         
                                         <g id="SVGRepo_iconCarrier"> 
@@ -55,7 +54,7 @@
                     </div>                     
                 </li>
             <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>                           
+            <?php wp_reset_postdata(); ?> 
         </ul>
     <?php else : ?>
         <p><?php _e( 'Sorry, no posts matched your criteria.', 'monotone_blocks' ); ?></p>
