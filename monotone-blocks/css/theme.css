@@ -1,0 +1,65 @@
+:root {
+    --text-color: #262626;
+    --background-color: #f1fffa;
+    --primary-color: #93b7be;
+    --secondary-color: #d5c7bc;
+    --accent-color: #785964;
+    --background-color-spot: var(--accent-color);
+    --link-color: var(--primary-color);
+    --link-hover-color: var(--accent-color);
+    --button-bg: var(--accent-color);
+    --button-border: var(--accent-color);
+    --button-hover-bg: var(--primary-color);
+    --button-active-bg: var(--secondary-color);
+    --button-text-color: var(--background-color);
+    --button-outline-bg: transparent;
+    --button-outline-border: var(--secondary-color);
+    --button-outline-hover-bg: var(--secondary-color);
+    --button-outline-active-bg: var(--secondary-color);
+    --button-outline-text-color: var(--secondary-color);
+}
+
+.wp-site-blocks {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.primary.light {
+}
+
+.primary.dark {
+    --text-color: #f1fffa;
+    --background-color: #454545;
+
+    /* --background-color-spot: #3d3d3d; */
+    --primary-color: #785964;
+    --secondary-color: #d5c7bc;
+    --accent-color: #93b7be;
+}
+
+.primary.dark.contrast {
+    --text-color: #f1fffa;
+    --background-color: #262626;
+
+    /* --background-color-spot: #3b3b3b; */
+    --primary-color: #4f3a42;
+    --secondary-color: #d5c7bc;
+    --accent-color: #c5d8dc;
+}
+
+.secondary.light {
+    --text-color: #514873;
+    --background-color: #F9F871;
+    --primary-color: #945886;
+    --secondary-color: #D16C85;
+    --accent-color: #FFC065;
+}
+
+.secondary.dark {
+    --text-color: #F9F871;
+    --background-color: #514873;
+    --primary-color: #FFC065;
+    --secondary-color: #D16C85;
+    --accent-color: #945886;
+}
+
