@@ -1,5 +1,0 @@
-.card-bg {
-    box-shadow: 0 -1px 0px 0px var(--background-color-spot);
-    background-color: var(--primary-color);
-    filter: drop-shadow(0 16vh 0 var(--background-color)) !important;
-}

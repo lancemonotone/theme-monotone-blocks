@@ -22,6 +22,8 @@ wp-config.php
 
 # Example themes
 /wp-content/themes/twenty*/
+/twenty*/
+/monotone-resume/
 
 # Example plugin
 /wp-content/plugins/hello.php

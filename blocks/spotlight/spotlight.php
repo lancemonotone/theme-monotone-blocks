@@ -1,1 +1,0 @@
-<div <?php if(empty($_GET['context']) || $_GET['context'] !== 'edit') echo get_block_wrapper_attributes( array('id' => "spotlight", 'class' => "pointer-events-none fixed inset-0 z-10 transition duration-300 bg-radial-gradient", ) ); else echo 'data-wp-block-props="true"'; ?>></div>
