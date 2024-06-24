@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const root = document.documentElement;
-    root.classList.add('group', 'primary', 'dark');
+    root.classList.add('group', 'primary', 'dark', 'contrast');
     // root.classList.add('contrast');
 
     const toggleTheme = () => {
@@ -12,4 +12,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
             root.classList.add('dark');
         }
     };
+
 });

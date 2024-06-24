@@ -1,10 +1,10 @@
 // Listen for the DOMContentLoaded event which fires when the initial HTML document has been completely loaded and parsed
 document.addEventListener('DOMContentLoaded', () => {
     // Select all job type cards except the last one
-    const cards = document.querySelectorAll('.type-job:not(:last-child)')
+    const containers = document.querySelectorAll('.cards');
 
     // Function to check the visibility of each card
-    function checkVisibility () {
+    function checkVisibility (cards) {
         // Loop through each card
         cards.forEach((card) => {
             // Calculate the top value of the card, subtracting 16
@@ -61,10 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return overlapPercentage >= overlapPercentageValue
     }
 
-    // Check the visibility of the cards initially
-    checkVisibility()
-    // Check the visibility of the cards whenever the user scrolls
-    window.addEventListener('scroll', () => {
-        checkVisibility()
+    // For each container, select all direct children except the last one
+    containers.forEach(container => {
+        const cards = container.querySelectorAll(':scope > *:not(:last-child)');
+
+        // Check the visibility of the cards initially
+        checkVisibility(cards)
+        // Check the visibility of the cards whenever the user scrolls
+        window.addEventListener('scroll', () => {
+            checkVisibility(cards)
+        })
     })
+
+
 })

@@ -8,8 +8,7 @@
             <?php if ( has_nav_menu( 'primary' ) ) : ?>
                 <?php
                     PG_Smart_Walker_Nav_Menu::init();
-                    PG_Smart_Walker_Nav_Menu::$options['template'] = '<li class="{CLASSES}" id="{ID}">
-                                                            <a class="flex group/nav-item items-center no-underline py-3" {ATTRS}><span class="group-focus-visible/nav-item:w-16 group-focus-visible:w-16 group-hover/nav-item:w-16 h-px motion-reduce:transition-none mr-4 nav-indicator transition-all w-8"></span><span class="font-bold group-focus-visible:text-background-900 group-hover:text-background-900 nav-text text-xs tracking-widest uppercase">{TITLE}</span></a> 
+                    PG_Smart_Walker_Nav_Menu::$options['template'] = '<li class="{CLASSES}" id="{ID}"><a class="flex group/nav-item items-center no-underline py-3" {ATTRS}><span class="group-focus-visible/nav-item:w-16 group-focus-visible:w-16 group-hover/nav-item:w-16 h-px motion-reduce:transition-none mr-4 nav-indicator transition-all w-8"></span><span class="font-bold group-focus-visible:text-background-900 group-hover:text-background-900 nav-text text-xs tracking-widest uppercase">{TITLE}</span></a> 
                                                         </li>';
                     PG_Smart_Walker_Nav_Menu::$options['current_class'] = 'active';
                     wp_nav_menu( array(
@@ -21,4 +20,6 @@
             <?php endif; ?> 
         </nav>         
     </div>
+    <ul class="ml-1 mt-8 flex items-center" aria-label="Social media">
+</ul>
 </header>

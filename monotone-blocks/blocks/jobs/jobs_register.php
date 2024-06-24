@@ -13,14 +13,18 @@
             'base_path' => get_template_directory(),
             'js_file' => 'blocks/jobs/jobs.js',
             'attributes' => array(
-                'show_archive_link' => array(
+                'show_resume_link' => array(
                     'type' => 'string',
                     'default' => ''
+                ),
+                'resume_link_url' => array(
+                    'type' => 'object',
+                    'default' => array('post_id' => 0, 'url' => '', 'post_type' => '', 'title' => '')
                 )
             ),
             'example' => array(
-'show_archive_link' => ''
+'show_resume_link' => '', 'resume_link_url' => array('post_id' => 0, 'url' => '#', 'post_type' => '', 'title' => '')
             ),
             'dynamic' => true,
-            'version' => '1.0.332'
+            'version' => '1.0.458'
         ) );

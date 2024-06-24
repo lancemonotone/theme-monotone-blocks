@@ -9,19 +9,36 @@
     ?>
     <?php $jobs_query = new WP_Query( $jobs_query_args ); ?>
     <?php if ( $jobs_query->have_posts() ) : ?>
-        <ol class="cards group/list"> 
+        <ol class="cards group/list jobs lg:snap-mandatory lg:snap-y"> 
             <?php while ( $jobs_query->have_posts() ) : $jobs_query->the_post(); ?>
                 <?php PG_Helper_v2::rememberShownPost(); ?>
-                <li id="post-<?php the_ID(); ?>" <?php post_class( 'ease-in-out mb-12 transition-opacity lg:sticky lg:top-24 overlap-9' ); ?>> 
+                <li id="post-<?php the_ID(); ?>" <?php post_class( 'ease-in-out mb-12 overlap-9 lg:snap-start lg:sticky lg:top-24' ); ?>> 
                     <div class="grid group/card md:gap-4 pb-1 relative sm:gap-8 sm:grid-cols-12 transition-all"> 
                         <div class="-inset-x-4 -inset-x-6 -inset-y-4 absolute block card-bg motion-reduce:transition-none transition z-0 md:rounded-md lg:group-hover/card:drop-shadow-lg"> 
 </div>                         
-                        <div class="flex flex-col font-semibold mb-2 mt-1 sm:col-span-2 text-background-200 text-xs tracking-wide uppercase z-10" aria-label="2024 to Present"> <span class="mb-1"><?php echo get_field( 'job_start' ); ?></span> <span><?php echo get_field( 'job_end' ); ?></span> 
+                        <div class="flex flex-col font-semibold mb-2 mt-1 text-background-200 text-center text-xs tracking-wide uppercase z-10 sm:col-span-2" aria-label="2024 to Present"> 
+                            <?php if ( get_field('project_gallery') ) : ?>
+                                <div class="h-fit mb-2 mt-1 overflow-hidden z-10">
+                                    <?php
+                                        $images = get_field('project_gallery');
+                                        $size = 'full'; // (thumbnail, medium, large, full or custom size);
+                                        if( $images ) {
+                                            // Display the first image
+                                            $first_image = array_shift($images);
+                                            $first_image_id      = $first_image['ID'];
+                                            $first_image_src     = $first_image['url'];
+                                            $first_image_caption = $first_image['alt'];
+                                            echo wp_get_attachment_image( $first_image_id, $size );
+                                        }
+                                     ?> 
+                                </div>
+                            <?php endif; ?><span class="mb-1"><?php echo get_field( 'job_start' ); ?></span> <span><?php echo get_field( 'job_end' ); ?></span> 
                         </div>                         
                         <div class="sm:col-span-9 z-10">
                             <header>
                                 <h3 class="font-medium inline-block leading-snug"><div> <span><?php echo get_field( 'job_title' ); ?></span>  ·  
-                                    </div></h3><a class="font-medium group/link inline-flex items-center leading-tight text-sm" href="<?php echo esc_url( get_field( 'job_company_url' ) ); ?>" target="_blank" rel="noreferrer noopener" aria-foo="Start" aria-label="<?php echo get_field('job_title') . ' - ' ?><?php echo the_title() ?> <?php echo '(opens in a new tab)' ?>"><span class="group-[.contrast]:border-b group-[.contrast]:border-dotted inline-block"><?php the_title(); ?></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"> 
+                                    </div></h3>
+                                <a class="font-medium group/link inline-flex items-center leading-tight text-sm" href="<?php echo esc_url( get_field( 'job_company_url' ) ); ?>" target="_blank" rel="noreferrer noopener" aria-foo="Start" aria-label="<?php echo get_field('job_title') . ' - ' ?><?php echo the_title() ?> <?php echo '(opens in a new tab)' ?>"><span class="group-[.contrast]:border-b group-[.contrast]:border-dotted inline-block"><?php the_title(); ?></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"> 
                                         <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path>                                         
                                     </svg></a>
                             </header>                             
@@ -59,10 +76,13 @@
     <?php else : ?>
         <p><?php _e( 'Sorry, no posts matched your criteria.', 'monotone_blocks' ); ?></p>
     <?php endif; ?> 
-    <?php if ( PG_Blocks_v2::getAttribute( $args, 'show_archive_link', false ) ) : ?>
-        <div class="mt-12"> <a class="font-medium group/link inline-flex items-center leading-tight relative text-base" href="/resume.pdf" target="_blank" rel="noreferrer noopener" aria-label="View Full Résumé (opens in a new tab)"><?php _e( 'View Full Résumé', 'monotone_blocks' ); ?> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"> 
-                    <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path>                     
-                </svg></a> 
+    <?php if ( PG_Blocks_v2::getAttribute( $args, 'show_resume_link', false ) ) : ?>
+        <div class="mt-12"> 
+            <?php if ( PG_Blocks_v2::getLinkUrl( $args, 'resume_link_url', false ) ) : ?>
+                <a class="font-medium group/link inline-flex items-center leading-tight relative text-base" href="<?php echo (!empty($_GET['context']) && $_GET['context'] === 'edit') ? 'javascript:void()' : PG_Blocks_v2::getLinkUrl( $args, 'resume_link_url' ) ?>" aria-label="View Full Résumé (opens in a new tab)" rel="noreferrer noopener"><?php _e( 'View Full Résumé', 'monotone_blocks' ); ?> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"> 
+                        <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path>                         
+                    </svg></a>
+            <?php endif; ?> 
         </div>
     <?php endif; ?> 
 </div>

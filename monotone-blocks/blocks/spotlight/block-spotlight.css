@@ -1,6 +1,6 @@
 #spotlight {
   background: radial-gradient(900px circle at var(--gradient-position), var(--background-color-spot), transparent 60%);
-  opacity: .2;
+  opacity: .1;
 }
 
 .gradient-position {

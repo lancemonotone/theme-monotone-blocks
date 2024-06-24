@@ -11,11 +11,18 @@
             'base_path' => get_template_directory(),
             'js_file' => 'blocks/projects/projects.js',
             'attributes' => array(
-
+                'show_archive_link' => array(
+                    'type' => 'string',
+                    'default' => ''
+                ),
+                'archive_link_url' => array(
+                    'type' => 'object',
+                    'default' => array('post_id' => 0, 'url' => '', 'post_type' => '', 'title' => '')
+                )
             ),
             'example' => array(
-
+'show_archive_link' => '', 'archive_link_url' => array('post_id' => 0, 'url' => '#', 'post_type' => '', 'title' => '')
             ),
             'dynamic' => true,
-            'version' => '1.0.332'
+            'version' => '1.0.458'
         ) );
