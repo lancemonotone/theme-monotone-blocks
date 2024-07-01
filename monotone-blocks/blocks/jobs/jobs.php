@@ -12,13 +12,13 @@
         <ol class="cards group/list jobs lg:snap-mandatory lg:snap-y"> 
             <?php while ( $jobs_query->have_posts() ) : $jobs_query->the_post(); ?>
                 <?php PG_Helper_v2::rememberShownPost(); ?>
-                <li id="post-<?php the_ID(); ?>" <?php post_class( 'ease-in-out mb-12 overlap-9 lg:snap-start lg:sticky lg:top-24' ); ?>> 
-                    <div class="grid group/card md:gap-4 pb-1 relative sm:gap-8 sm:grid-cols-12 transition-all"> 
-                        <div class="-inset-x-4 -inset-x-6 -inset-y-4 absolute block card-bg motion-reduce:transition-none transition z-0 md:rounded-md lg:group-hover/card:drop-shadow-lg"> 
+                <li id="post-<?php the_ID(); ?>" <?php post_class( 'ease-in-out mb-14 overlap-9 lg:snap-start lg:sticky lg:top-24' ); ?>> 
+                    <div class="gap-8 grid grid-cols-1 group/card pb-2 relative transition-all sm:grid-cols-12"> 
+                        <div class="-inset-x-4 -inset-x-6 -inset-y-4 absolute block motion-reduce:transition-none transition z-0 lg:group-hover/card:drop-shadow-lg sm:drop-shadow-sm cardbg shadow-[0_-1_0_0_var(--background-color-spot)] bg-[var(--primary-color)] rounded-md border-t bg-slate-600 border-[var(--secondary-color)]"> 
 </div>                         
-                        <div class="flex flex-col font-semibold mb-2 mt-1 text-background-200 text-center text-xs tracking-wide uppercase z-10 sm:col-span-2" aria-label="2024 to Present"> 
+                        <div class="content-between font-semibold gap-4 grid grid-cols-4 mb-2 mt-1 sm:col-span-2 sm:content-start sm:grid-cols-1 text-background-200 text-center text-xs tracking-wide uppercase z-10" aria-label="2024 to Present"> 
                             <?php if ( get_field('project_gallery') ) : ?>
-                                <div class="h-fit mb-2 mt-1 overflow-hidden z-10">
+                                <div class="h-fit mt-1 overflow-hidden z-10">
                                     <?php
                                         $images = get_field('project_gallery');
                                         $size = 'full'; // (thumbnail, medium, large, full or custom size);
@@ -30,13 +30,15 @@
                                             $first_image_caption = $first_image['alt'];
                                             echo wp_get_attachment_image( $first_image_id, $size );
                                         }
-                                     ?> 
+                                    ?> 
                                 </div>
-                            <?php endif; ?><span class="mb-1"><?php echo get_field( 'job_start' ); ?></span> <span><?php echo get_field( 'job_end' ); ?></span> 
+                            <?php endif; ?>
+                            <div class="col-span-1 col-start-6 flex flex-col justify-end sm:col-auto sm:content-start sm:items-stretch sm:justify-start"><span class="mb-1"><?php echo get_field( 'job_start' ); ?></span><span><?php echo get_field( 'job_end' ); ?></span>
+                            </div>                             
                         </div>                         
                         <div class="sm:col-span-9 z-10">
                             <header>
-                                <h3 class="font-medium inline-block leading-snug"><div> <span><?php echo get_field( 'job_title' ); ?></span>  ·  
+                                <h3 class="font-medium inline-block leading-snug mr-1"><div> <span><?php echo get_field( 'job_title' ); ?></span>  ·  
                                     </div></h3>
                                 <a class="font-medium group/link inline-flex items-center leading-tight text-sm" href="<?php echo esc_url( get_field( 'job_company_url' ) ); ?>" target="_blank" rel="noreferrer noopener" aria-foo="Start" aria-label="<?php echo get_field('job_title') . ' - ' ?><?php echo the_title() ?> <?php echo '(opens in a new tab)' ?>"><span class="group-[.contrast]:border-b group-[.contrast]:border-dotted inline-block"><?php the_title(); ?></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"> 
                                         <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path>                                         
@@ -58,7 +60,7 @@
                             </footer>                             
                         </div>                         
                         <?php if ( current_user_can( 'edit_posts' ) ) : ?>
-                            <span href="" class="font-bold hidden group-hover/card:block text-background-200 text-right text-xs uppercase z-10"><a href="<?php echo esc_url( get_edit_post_link() ); ?>" aria-label="Edit post" target="_blank" class="inline-block"><svg fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 528.899 528.899" xml:space="preserve" preserveAspectRatio width="25" height="25"> 
+                            <span href="" class="font-bold sm:group-hover/card:block hidden text-background-200 text-right text-xs uppercase z-10"><a href="<?php echo esc_url( get_edit_post_link() ); ?>" aria-label="Edit post" target="_blank" class="inline-block"><svg fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 528.899 528.899" xml:space="preserve" preserveAspectRatio width="25" height="25"> 
                                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>                                         
                                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>                                         
                                         <g id="SVGRepo_iconCarrier"> 

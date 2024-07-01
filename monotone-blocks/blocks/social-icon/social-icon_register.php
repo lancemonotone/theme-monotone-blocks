@@ -32,5 +32,5 @@
 </svg>', 'alt' => null)
             ),
             'dynamic' => true,
-            'version' => '1.0.458'
+            'version' => '1.0.571'
         ) );

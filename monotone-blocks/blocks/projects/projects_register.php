@@ -24,5 +24,5 @@
 'show_archive_link' => '', 'archive_link_url' => array('post_id' => 0, 'url' => '#', 'post_type' => '', 'title' => '')
             ),
             'dynamic' => true,
-            'version' => '1.0.458'
+            'version' => '1.0.571'
         ) );

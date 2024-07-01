@@ -10,6 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    doSpotlight();
+    //doSpotlight();
 
 });

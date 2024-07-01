@@ -5,8 +5,8 @@ p + p {
 }
 
 html {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
     font-style: normal;
     font-feature-settings: normal;
     font-variation-settings: normal;
@@ -20,13 +20,13 @@ h1 {
 }
 
 h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
 }
 
 em {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
     font-style: italic;
 }
 
@@ -34,7 +34,7 @@ code,
 kbd,
 samp,
 pre {
-    font-family: 'Source Sans Pro', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: 'Noto Sans Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-weight: 400;
 }
 

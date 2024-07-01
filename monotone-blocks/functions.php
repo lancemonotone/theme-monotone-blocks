@@ -178,26 +178,26 @@ if ( ! function_exists( 'monotone_blocks_enqueue_scripts' ) ) :
 
         /* Pinegrow generated Enqueue Scripts Begin */
 
-    wp_enqueue_script( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js', null, '1.0.458', true );
+    wp_enqueue_script( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js', null, '1.0.571', true );
 
-    wp_enqueue_script( 'monotone-blocks-theme', get_template_directory_uri() . '/js/theme.js', null, '1.0.458', true );
+    wp_enqueue_script( 'monotone-blocks-theme', get_template_directory_uri() . '/js/theme.js', null, '1.0.571', true );
 
-    wp_enqueue_script( 'fancybox-config', get_template_directory_uri() . '/js/fancybox-config.js', array( 'fancybox' ), '1.0.458', false );
+    wp_enqueue_script( 'fancybox-config', get_template_directory_uri() . '/js/fancybox-config.js', array( 'fancybox' ), '1.0.571', false );
 
     /* Pinegrow generated Enqueue Scripts End */
 
         /* Pinegrow generated Enqueue Styles Begin */
 
-    wp_enqueue_style( 'monotone-blocks-tailwind', get_template_directory_uri() . '/tailwind_theme/tailwind.css', null, '1.0.458', 'all' );
+    wp_enqueue_style( 'monotone-blocks-tailwind', get_template_directory_uri() . '/tailwind_theme/tailwind.css', null, '1.0.571', 'all' );
 
-    wp_enqueue_style( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css', null, '1.0.458', 'all' );
+    wp_enqueue_style( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css', null, '1.0.571', 'all' );
 
-    wp_enqueue_style( 'monotone-blocks-theme', get_template_directory_uri() . '/css/theme.css', null, '1.0.458', 'all' );
+    wp_enqueue_style( 'monotone-blocks-theme', get_template_directory_uri() . '/css/theme.css', null, '1.0.571', 'all' );
 
-    wp_enqueue_style( 'monotone-blocks-styles', get_template_directory_uri() . '/css/styles.css', null, '1.0.458', 'all' );
+    wp_enqueue_style( 'monotone-blocks-styles', get_template_directory_uri() . '/css/styles.css', null, '1.0.571', 'all' );
 
     wp_deregister_style( 'monotone_blocks-style' );
-    wp_enqueue_style( 'monotone_blocks-style', get_bloginfo('stylesheet_url'), [], '1.0.458', 'all');
+    wp_enqueue_style( 'monotone_blocks-style', get_bloginfo('stylesheet_url'), [], '1.0.571', 'all');
 
     /* Pinegrow generated Enqueue Styles End */
 
@@ -224,11 +224,11 @@ function monotone_blocks_selectively_enqueue_admin_script( $page ) {
     // Don't edit anything between the following comments.
     /* Pinegrow generated Enqueue Admin Styles Begin */
 
-    wp_enqueue_style( 'monotone-blocks-tailwind', get_template_directory_uri() . '/tailwind_theme/tailwind.css', null, '1.0.458', 'all' );
+    wp_enqueue_style( 'monotone-blocks-tailwind', get_template_directory_uri() . '/tailwind_theme/tailwind.css', null, '1.0.571', 'all' );
 
-    wp_enqueue_style( 'monotone-blocks-theme', get_template_directory_uri() . '/css/theme.css', null, '1.0.458', 'all' );
+    wp_enqueue_style( 'monotone-blocks-theme', get_template_directory_uri() . '/css/theme.css', null, '1.0.571', 'all' );
 
-    wp_enqueue_style( 'monotone-blocks-styles', get_template_directory_uri() . '/css/styles.css', null, '1.0.458', 'all' );
+    wp_enqueue_style( 'monotone-blocks-styles', get_template_directory_uri() . '/css/styles.css', null, '1.0.571', 'all' );
 
     /* Pinegrow generated Enqueue Admin Styles End */
     

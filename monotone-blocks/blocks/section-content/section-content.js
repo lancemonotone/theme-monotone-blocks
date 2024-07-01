@@ -41,7 +41,7 @@
         },
         example: { attributes: { section_id: null, section_name: 'About me' } },
         edit: function ( props ) {
-            const blockProps = useBlockProps({ className: 'mb-16 scroll-mt-16 lg:scroll-mt-24', 'aria-label': propOrDefault( props.attributes.section_name, 'section_name' ), id: propOrDefault( props.attributes.section_id, 'section_id' ) });
+            const blockProps = useBlockProps({ className: 'mb-16', 'aria-label': propOrDefault( props.attributes.section_name, 'section_name' ), 'data-pg-name': 'Content Section', id: propOrDefault( props.attributes.section_id, 'section_id' ) });
             const setAttributes = props.setAttributes; 
             
             
@@ -50,7 +50,7 @@
                             
             
             return el(Fragment, {}, [
-                el('section', { ...blockProps }, [' ', el('div', { className: '-mx-6 backdrop-blur mb-4 px-6 py-5 section-header sticky top-0 w-screen z-20 md:-mx-12 md:px-12 lg:mx-auto lg:opacity-0 lg:px-0 lg:py-0 lg:relative lg:sr-only lg:top-auto lg:w-full' }, [' ', el(RichText, { tagName: 'h2', className: 'text-xl tracking-widest lg:sr-only', value: propOrDefault( props.attributes.section_name, 'section_name' ), onChange: function(val) { setAttributes( {section_name: val }) }, withoutInteractiveFormatting: true, allowedFormats: [] }), ' ']), ' ', el('div', { ...innerBlocksProps }), ' ']),                        
+                el('section', { ...blockProps }, [' ', el('div', { className: '-mx-12 -top-1 backdrop-blur mb-4 px-12 py-5 relative sticky z-20' }, [' ', el(RichText, { tagName: 'h2', className: 'uppercase', 'data-pg-class-style': 'h2', value: propOrDefault( props.attributes.section_name, 'section_name' ), onChange: function(val) { setAttributes( {section_name: val }) }, withoutInteractiveFormatting: true, allowedFormats: [] }), ' ']), ' ', el('div', { ...innerBlocksProps }), ' ']),                        
                 
                     el( InspectorControls, {},
                         [

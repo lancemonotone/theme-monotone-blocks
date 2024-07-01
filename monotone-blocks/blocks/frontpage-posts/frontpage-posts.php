@@ -13,12 +13,12 @@
             <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
                 <?php PG_Helper_v2::rememberShownPost(); ?>
                 <li id="post-<?php the_ID(); ?>" <?php post_class( 'ease-in-out mb-12 lg:sticky lg:top-24 overlap-9' ); ?>> 
-                    <div class="group/card pb-1 relative transition-all sm:flex sm:gap-8"> 
-                        <div class="-inset-x-4 -inset-x-6 -inset-y-4 absolute block card-bg motion-reduce:transition-none transition z-0 md:rounded-md lg:group-hover/card:drop-shadow-lg"> 
+                    <div class="gap-8 grid grid-cols-1 group/card pb-2 relative transition-all sm:grid-cols-12"> 
+                        <div class="-inset-x-4 -inset-x-6 -inset-y-4 absolute block motion-reduce:transition-none transition z-0 lg:group-hover/card:drop-shadow-lg sm:drop-shadow-sm cardbg shadow-[0_-1_0_0_var(--background-color-spot)] bg-[var(--primary-color)] rounded-md border-t bg-slate-600"> 
 </div>
-                        <div class="flex flex-col font-semibold mb-2 mt-1 sm:col-span-2 text-background-200 text-xs tracking-wide uppercase z-10" aria-label="2024 to Present"> <span class="mb-1"><?php the_time( get_option( 'date_format' ) ); ?></span>                              
+                        <div class="content-between font-semibold gap-4 grid grid-cols-4 mb-2 mt-1 sm:col-span-2 sm:content-start sm:grid-cols-1 text-background-200 text-center text-xs tracking-wide uppercase z-10" aria-label="2024 to Present"> <span class="mb-1"><?php the_time( get_option( 'date_format' ) ); ?></span> 
                         </div>                         
-                        <div class="z-10 sm:w-8/12">
+                        <div class="sm:col-span-9 z-10">
                             <header>
                                 <h3 class="font-medium inline-block leading-snug"><a class="group/link inline-flex items-center leading-tight" href="<?php echo esc_url( get_permalink() ); ?>" aria-label="<?php echo get_the_title() ?>"><span class="group-[.contrast]:border-b group-[.contrast]:border-dotted inline-block"><?php the_title(); ?></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"> 
                                             <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path>                                             
